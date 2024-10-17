@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ai.picovoice.porcupine.demo.MainActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="412dp"
+        android:layout_height="782dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.019"
+        app:srcCompat="@drawable/background" />
+
+    <TextView
+        android:id="@+id/keyword_spinner_label"
+        android:layout_width="74dp"
+        android:layout_height="21dp"
+        android:text="@string/keyword_label"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="616dp" />
+
+    <Spinner
+        android:id="@+id/keyword_spinner"
+        style="@android:style/Widget.Holo.Light.Spinner"
+        android:layout_width="183dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="4dp"
+        android:minHeight="48dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/keyword_spinner_label" />
+
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="182dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="4dp"
+        android:background="@drawable/error_view"
+        android:gravity="center"
+        android:padding="10sp"
+        android:text=""
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/footer"
+        android:layout_width="205dp"
+        android:layout_height="13dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/footer"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recordButton"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/time_bg"
+        android:layout_width="166dp"
+        android:layout_height="173dp"
+        android:background="@drawable/rounded_corner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.899"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.029" />
+
+    <TextView
+        android:id="@+id/time_day"
+        android:layout_width="95dp"
+        android:layout_height="35dp"
+        android:text="Tuesday"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/time_bg"
+        app:layout_constraintEnd_toEndOf="@+id/time_bg"
+        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintStart_toStartOf="@+id/time_bg"
+        app:layout_constraintTop_toTopOf="@+id/time_bg"
+        app:layout_constraintVertical_bias="0.52" />
+
+    <TextView
+        android:id="@+id/time_minute"
+        android:layout_width="73dp"
+        android:layout_height="69dp"
+        android:layout_marginBottom="12dp"
+        android:text="00"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="@+id/time_bg"
+        app:layout_constraintEnd_toEndOf="@+id/time_bg"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toStartOf="@+id/time_bg" />
+
+    <TextView
+        android:id="@+id/time_hour"
+        android:layout_width="83dp"
+        android:layout_height="74dp"
+        android:text="00"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="@+id/time_bg"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="@+id/time_bg"
+        app:layout_constraintTop_toTopOf="@+id/time_bg" />
+
+    <TextView
+        android:id="@+id/time_date"
+        android:layout_width="86dp"
+        android:layout_height="16dp"
+        android:text="2024-10--05"
+        android:textAlignment="center"
+        android:textColor="#FBFBFB"
+        android:textSize="10sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/time_bg"
+        app:layout_constraintEnd_toEndOf="@+id/time_bg"
+        app:layout_constraintHorizontal_bias="0.113"
+        app:layout_constraintStart_toStartOf="@+id/time_bg"
+        app:layout_constraintTop_toTopOf="@+id/time_bg"
+        app:layout_constraintVertical_bias="0.656" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimation"
+        android:layout_width="200dp"
+        android:layout_height="172dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.499"
+        app:lottie_rawRes="@raw/data" />
+
+    <TextView
+        android:id="@+id/ConversationView"
+        android:layout_width="87dp"
+        android:layout_height="338dp"
+        android:background="@drawable/rounded_corner"
+        android:text="Text\nwill\nbe\nshown\nhere"
+        android:textAlignment="viewStart"
+        android:textColor="#FAFAFA"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.508" />
+
+    <TextView
+        android:id="@+id/content_bg"
+        android:layout_width="200dp"
+        android:layout_height="165dp"
+        android:background="@drawable/rounded_corner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.918" />
+
+    <TextView
+        android:id="@+id/fun1_bg"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="46dp"
+        android:background="@drawable/rounded_corner"
+        app:layout_constraintEnd_toEndOf="@+id/content_bg"
+        app:layout_constraintTop_toTopOf="@+id/content_bg" />
+
+    <TextView
+        android:id="@+id/fun2_bg"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/rounded_corner"
+        app:layout_constraintStart_toStartOf="@+id/content_bg"
+        app:layout_constraintTop_toTopOf="@+id/content_bg" />
+
+    <TextView
+        android:id="@+id/fun3_bg"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="13dp"
+        android:background="@drawable/rounded_corner"
+        app:layout_constraintBottom_toBottomOf="@+id/content_bg"
+        app:layout_constraintEnd_toEndOf="@+id/content_bg" />
+
+    <TextView
+        android:id="@+id/fun4_bg"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginBottom="13dp"
+        android:background="@drawable/rounded_corner"
+        app:layout_constraintBottom_toBottomOf="@+id/content_bg"
+        app:layout_constraintStart_toStartOf="@+id/content_bg" />
+
+    <Button
+        android:id="@+id/openGalleryButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="open\ngallary"
+        android:textSize="6sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fun1_bg"
+        app:layout_constraintEnd_toEndOf="@+id/fun1_bg"
+        app:layout_constraintStart_toStartOf="@+id/fun1_bg"
+        app:layout_constraintTop_toTopOf="@+id/fun1_bg"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/congigNetworkButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="config\nNetwork"
+        android:textSize="6sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fun4_bg"
+        app:layout_constraintEnd_toEndOf="@+id/fun4_bg"
+        app:layout_constraintStart_toStartOf="@+id/fun4_bg"
+        app:layout_constraintTop_toTopOf="@+id/fun4_bg"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/recordButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="Recording"
+        android:textAllCaps="true"
+        android:textSize="6sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fun2_bg"
+        app:layout_constraintEnd_toEndOf="@+id/fun2_bg"
+        app:layout_constraintStart_toStartOf="@+id/fun2_bg"
+        app:layout_constraintTop_toTopOf="@+id/fun2_bg"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/setting_button"
+        android:layout_width="64dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Musicplayer_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="Music"
+        android:textSize="6sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fun3_bg"
+        app:layout_constraintEnd_toEndOf="@+id/fun3_bg"
+        app:layout_constraintHorizontal_bias="0.647"
+        app:layout_constraintStart_toStartOf="@+id/fun3_bg"
+        app:layout_constraintTop_toTopOf="@+id/fun3_bg"
+        app:layout_constraintVertical_bias="0.529" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
